@@ -1,0 +1,31 @@
+create table serie(
+codigo int primary key,
+nombre varchar(150),
+year int,
+season varchar(10),
+score float
+);
+
+create table temps(
+codigo int primary key,
+serie int,
+nombre varchar (50),
+score int,
+foreign key (serie) references serie(codigo)
+);
+
+create table tag(
+codigo int primary key,
+nombre varchar(30)
+);
+
+create table tagserie(
+codigo int primary key,
+serie int,
+tag int,
+foreign key (serie) references serie(codigo),
+foreign key (tag) references tag(codigo)
+);
+
+
+
