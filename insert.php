@@ -27,12 +27,14 @@
     $year = $_POST['year'];
     $season = $_POST['season'];
     $score = $_POST['score'];
-    $consulta = mysql_query("INSERT INTO serie VALUES (null,'$nombre','$year','$season','$score')");
+    $codigo = mysql_query("SELECT * FROM serie");
+    $cod = mysql_num_rows($codigo) + 1;
+    $consulta = mysql_query("INSERT INTO serie VALUES ($cod,'$nombre','$year','$season','$score')");
     if($consulta > 0){
       echo "Animu insertado";
     }
       else{
-          echo "algo malo paso";
+          echo "algo malo paso".mysql_error();
       }
     }
   ?>

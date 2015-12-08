@@ -10,7 +10,7 @@ create table temps(
 codigo int primary key,
 serie int,
 nombre varchar (50),
-score int,
+score float,
 foreign key (serie) references serie(codigo)
 );
 
