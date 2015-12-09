@@ -34,8 +34,9 @@ echo   "<tr>
   <td>";
     while ($row2 = mysql_fetch_array($cs2)){
       echo "<b>".$row2['nombre'].":</b> ".$row2['score']."<br>";
-    }
-  echo "<a href='agregar_season.php'>Agregar...</a>";
+  }
+  $nombre = $row['nombre'];
+  echo "<a href='agregar_season.php?anime=$nombre'>Agregar...</a>";
   echo "</td><td>";
 //Consulta 3 (Tags)
 $consulta3 = "SELECT * from tagserie WHERE serie = $serie";

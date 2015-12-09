@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `temps` (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
   `serie` int(11) DEFAULT NULL,
   `nombre` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `score` int(11) DEFAULT NULL,
+  `score` float DEFAULT NULL,
   PRIMARY KEY (`codigo`),
   KEY `serie` (`serie`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;

@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Anime Log</title>
+  <title>Eliminar Serie</title>
   <meta charset = "utf-8" />
 	<link href="css/estilo.css"	rel="stylesheet"	type="text/css" />
 </head>

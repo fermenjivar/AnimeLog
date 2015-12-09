@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Nueva Serie</title>
+  <title>Anime Log</title>
   <meta charset = "utf-8" />
 	<link href="css/estilo.css"	rel="stylesheet"	type="text/css" />
 </head>
@@ -8,7 +8,7 @@
   <h1>Agregar nuevo animu: </h1>
   <a href="index.php">Inicio</a>
   <br><br>
-<form action="insert.php" method="POST">
+<form action="agregar_season.php" method="POST">
   <label>Nombre: </label>
   <input type="text" name="nombre">
   <label>Año: </label>
@@ -22,13 +22,21 @@
   <input type="submit" name="insertar" value="Agregar">
   <?php
   if(isset($_POST['nombre']) and isset($_POST['year']) and isset($_POST['season']) and isset($_POST['score'])){
-      if($_POST['nombre'] != "" and $_POST['year'] != "" and $_POST['score'] != ""){
-          include "php/serie_agregar.php";
-      }
+    include "conexion.php";
+    $nombre = $_POST['nombre'];
+    $year = $_POST['year'];
+    $season = $_POST['season'];
+    $score = $_POST['score'];
+    $codigo = mysql_query("SELECT * FROM serie");
+    $cod = mysql_num_rows($codigo) + 1;
+    $consulta = mysql_query("INSERT INTO serie VALUES ($cod,'$nombre','$year','$season','$score')");
+    if($consulta > 0){
+      echo "Animu insertado";
+    }
       else{
-          echo "Falta algo...";
+          echo "algo malo paso".mysql_error();
       }
-  }
+    }
   ?>
 </form>
 </body>
