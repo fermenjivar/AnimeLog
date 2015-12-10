@@ -9,33 +9,27 @@
   <a href="index.php">Inicio</a>
   <br><br>
 <form action="agregar_season.php" method="POST">
+  <h3>Serie: <h3>
+    <select name="anime">
+      <option value="a">::Seleccion un animu::</option>
+      <?php include "php/get_select.php"; ?>
+    </select>
   <label>Nombre: </label>
   <input type="text" name="nombre">
-  <label>Año: </label>
-  <input type="number" name="year">
-  <br><br>
-  <label>Temporada: </label>
-  <input type="text" name="season">
   <label>Score: </label>
-  <input type="number" name="score">
-  <br><br>
+  <input type="text" name="score">
   <input type="submit" name="insertar" value="Agregar">
   <?php
-  if(isset($_POST['nombre']) and isset($_POST['year']) and isset($_POST['season']) and isset($_POST['score'])){
-    include "conexion.php";
-    $nombre = $_POST['nombre'];
-    $year = $_POST['year'];
-    $season = $_POST['season'];
-    $score = $_POST['score'];
-    $codigo = mysql_query("SELECT * FROM serie");
-    $cod = mysql_num_rows($codigo) + 1;
-    $consulta = mysql_query("INSERT INTO serie VALUES ($cod,'$nombre','$year','$season','$score')");
-    if($consulta > 0){
-      echo "Animu insertado";
-    }
-      else{
-          echo "algo malo paso".mysql_error();
-      }
+    if(isset($_POST['nombre']) and isset($_POST['score']) and isset($_POST['insertar'])){
+        if($_POST['nombre'] != "" and $_POST['score'] != ""){
+          if( strlen($_POST['nombre']) > 50 or $_POST['score'] > 10){
+            echo "Muy largo.";
+          }
+          else{
+            include "php/season_agregar.php";
+          }
+        }
+        else{echo "Vacio.";}
     }
   ?>
 </form>
