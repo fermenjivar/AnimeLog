@@ -2,21 +2,23 @@
 <head>
   <title>Anime Log</title>
   <meta charset = "utf-8" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 	<link href="css/estilo.css"	rel="stylesheet"	type="text/css" />
 </head>
 <h1>My Weaboo List</h1>
-<a href="insert.php">Agregar</a>
-<a href="modificar.php">Modificar</a>
-<a href="eliminar.php">Eliminar</a>
+<a href="anime/insert.php">Agregar</a>
+<a href="anime/modificar.php">Modificar</a>
+<a href="anime/eliminar.php">Eliminar</a>
+<br>
 <br>
 <table border="1">
   <tr>
-    <td><b>Nombre</b></td>
-    <td><b>Seasons</b></td>
-    <td><b>Tags</b></td>
-    <td><b>Año</b></td>
-    <td><b>Temporada</b></td>
-    <td><b>Score</b></td>
+    <th><b>Nombre</b></th>
+    <th><b>Seasons</b></th>
+    <th><b>Tags</b></th>
+    <th><b>Año</b></th>
+    <th><b>Temporada</b></th>
+    <th><b>Score</b></th>
   </tr>
 <?php
 include "conexion.php";
@@ -36,7 +38,7 @@ echo   "<tr>
       echo "<b>".$row2['nombre'].":</b> ".$row2['score']."<br>";
   }
   $nombre = $row['nombre'];
-  echo "<a href='agregar_season.php?anime=$nombre'>Agregar...</a>";
+  echo "<a href='season/agregar_season.php?anime=$nombre'>Agregar...</a>";
   echo "</td><td>";
 //Consulta 3 (Tags)
 $consulta3 = "SELECT * from tagserie WHERE serie = $serie";

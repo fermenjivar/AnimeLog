@@ -3,3 +3,15 @@
 body{
 font-family: 'Open Sans', sans-serif;
 }
+table{
+  border-collapse: collapse;
+  margin: 10px;
+}
+th{
+  height: 30px;
+  color: white;
+  background-color: #34D491;
+}
+td{
+  margin: 2px;
+}
