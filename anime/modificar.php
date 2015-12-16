@@ -6,6 +6,27 @@
   <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico" />
 </head>
 <body>
+  <ul>
+    <li class="dropbtn">My Weaboo List</li>
+    <li><a class="active" href="../index.php">Home</a></li>
+    <!--<li><a href="#news">Tags</a></li>-->
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Series</a>
+      <div class="dropdown-content">
+        <a href="insert.php">Agregar</a>
+        <a href="modificar.php">Modificar</a>
+        <a href="eliminar.php">Eliminar</a>
+    </div>
+    </div>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Tags</a>
+      <div class="dropdown-content">
+        <a href="../season/agregar_season.php">Agregar</a>
+        <a href="../season/modificar.php">Modificar</a>
+        <a href="../season/eliminar.php">Eliminar</a>
+      </div>
+    </div>
+  </ul>
   <h1>Modificar animu: </h1>
   <a href="../index.php">Inicio</a>
   <br><br>

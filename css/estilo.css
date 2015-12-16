@@ -2,63 +2,58 @@
 
 body{
 font-family: 'Open Sans', sans-serif;
+padding: 0,0,0,0;
 }
 table{
   border-collapse: collapse;
   margin: 10px;
+  width: 100%;
+}
+
+.d1{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 th{
   height: 30px;
   color: white;
-  background-color: #34D491;
-}
-td{
-  margin: 2px;
+  background-color: #333;
 }
 
-
-/*Nav Bar D: no del todo original*/
-
-/*Remover guiones*/
 ul {
+    /*Remover guiones*/
     list-style-type: none;
     margin: 0;
     padding: 0;
+    background-color: #333;
 }
 
-/*Desplegar lista de manera horizontal*/
-
 li {
+    /*Elementos de la nav var de izquierda a derecha*/
     float: left;
 }
 
-/*Estilo de los bloques y drop button*/
 li a, .dropbtn {
-    display: block;
-    /*Espacio de los bloques*/
-    padding: 12px;
-    background-color: #333;
-    /*Links color blanco y sin subraydo*/
+    /*Aplicarle a los opciones desplegables las props de los li*/
+    /*Lista horizontal*/
+    display: inline-block;
+    /*Letra blanca, centrada y con espaciado*/
     color: white;
+    text-align: center;
+    padding: 14px 16px;
+    /*Quitarle el subrayado al <a>*/
     text-decoration: none;
 }
 
-/*Cambiar de color al hacer hover*/
-li a:hover {
+li a:hover, .dropdown:hover .dropbtn {
+    /*Cambiar de color al hacer hover*/
     background-color: #111;
-    color: white;
 }
-
-/*Cambiar a blanco el elemento activo
-.active {
-    background-color: #4CAF50;
-    color: white;
-}
-*/
 
 .dropdown {
+    /*Que se despliegue en bloques como si fuera un div*/
     display: inline-block;
-    overflow: hidden;
 }
 
 .dropdown-content {
@@ -81,3 +76,10 @@ li a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/*Cambiar a blanco el elemento activo
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+*/
