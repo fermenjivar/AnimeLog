@@ -15,3 +15,69 @@ th{
 td{
   margin: 2px;
 }
+
+
+/*Nav Bar D: no del todo original*/
+
+/*Remover guiones*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*Desplegar lista de manera horizontal*/
+
+li {
+    float: left;
+}
+
+/*Estilo de los bloques y drop button*/
+li a, .dropbtn {
+    display: block;
+    /*Espacio de los bloques*/
+    padding: 12px;
+    background-color: #333;
+    /*Links color blanco y sin subraydo*/
+    color: white;
+    text-decoration: none;
+}
+
+/*Cambiar de color al hacer hover*/
+li a:hover {
+    background-color: #111;
+    color: white;
+}
+
+/*Cambiar a blanco el elemento activo
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+*/
+
+.dropdown {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

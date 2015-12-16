@@ -5,10 +5,26 @@
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 	<link href="css/estilo.css"	rel="stylesheet"	type="text/css" />
 </head>
-<h1>My Weaboo List</h1>
-<a href="anime/insert.php">Agregar</a>
-<a href="anime/modificar.php">Modificar</a>
-<a href="anime/eliminar.php">Eliminar</a>
+<!--<h1>My Weaboo List</h1>*-->
+
+<ul>
+  <li class="dropbtn">My Weaboo List</li>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">Tags</a></li>
+  <div class="dropdown">
+    <a href="#" class="dropbtn">Series</a>
+    <div class="dropdown-content">
+      <a href="anime/insert.php">Agregar</a>
+      <a href="anime/modificar.php">Modificar</a>
+      <a href="anime/eliminar.php">Eliminar</a>
+    </div>
+  </div>
+</ul>
+<!--
+<a href="">Agregar</a>
+<a href="">Modificar</a>
+<a href="">Eliminar</a>
+-->
 <br>
 <br>
 <table border="1">
