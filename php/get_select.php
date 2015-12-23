@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include "../conexion.php";
 $consulta = "SELECT * FROM serie";
 $serieget= $_GET['anime'];
 $cs = mysql_query($consulta);

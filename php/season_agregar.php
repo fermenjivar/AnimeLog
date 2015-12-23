@@ -1,5 +1,5 @@
 <?php
-include "conexion.php";
+include "../conexion.php";
 $nombre = $_POST['nombre'];
 $score = $_POST['score'];
 $codigo = mysql_query("SELECT * FROM temps");

@@ -5,27 +5,10 @@
   <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 	<link href="css/estilo.css"	rel="stylesheet"	type="text/css" />
 </head>
-<ul>
-  <li class="dropbtn">My Weaboo List</li>
-  <li><a class="active" href="#home">Home</a></li>
-  <!--<li><a href="#news">Tags</a></li>-->
-  <div class="dropdown">
-    <a href="#" class="dropbtn">Series</a>
-    <div class="dropdown-content">
-      <a href="anime/insert.php">Agregar</a>
-      <a href="anime/modificar.php">Modificar</a>
-      <a href="anime/eliminar.php">Eliminar</a>
-  </div>
-  </div>
-  <div class="dropdown">
-    <a href="#" class="dropbtn">Tags</a>
-    <div class="dropdown-content">
-      <a href="anime/insert.php">Agregar</a>
-      <a href="anime/modificar.php">Modificar</a>
-      <a href="anime/eliminar.php">Eliminar</a>
-    </div>
-  </div>
-</ul>
+<body>
+<?php
+include "navbar.php";
+?>
 <br>
 <br>
 <div class="d1">
@@ -48,14 +31,14 @@ include "conexion.php";
 $serie = $row['codigo'];
 $consulta2 = "SELECT * from temps WHERE serie = $serie";
 $cs2 = mysql_query($consulta2);
-
+$nombre = $row['nombre'];
 echo   "<tr>
-  <td>".$row['nombre']."</td>
+  <td><a href='serie.php?anime=$nombre'>".$row['nombre']."</a></td>
   <td>";
     while ($row2 = mysql_fetch_array($cs2)){
       echo "<b>".$row2['nombre'].":</b> ".$row2['score']."<br>";
   }
-  $nombre = $row['nombre'];
+
   echo "<a href='season/agregar_season.php?anime=$nombre'>Agregar...</a>";
   echo "</td><td>";
 //Consulta 3 (Tags)
